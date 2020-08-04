@@ -6,8 +6,7 @@
  */
 
 import React from "react"
-import "tailwindcss/dist/base.min.css"
-import "./layout.css"
+import { styled } from "twin.macro"
 // import { useStaticQuery, graphql } from "gatsby"
 
 // import Header from "./header"
@@ -24,13 +23,20 @@ const Layout = ({ children }) => {
   // `)
 
   return (
-    <>
+    <GlobalStyles>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div>
         <main>{children}</main>
       </div>
-    </>
+    </GlobalStyles>
   )
 }
+
+const GlobalStyles = styled.div`
+  @font-face {
+    font-family: "Righteous";
+    src: url("../fonts/Righteous-Regular.ttf");
+  }
+`
 
 export default Layout
